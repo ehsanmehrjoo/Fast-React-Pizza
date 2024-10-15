@@ -3,6 +3,7 @@ import Home from './Ui/Home'
  import Menu from './features/menu/Menu'
 import Cart from "./features/cart/Cart"
 import Order from "./features/order/Order"
+import CreateOrder from "./features/order/CreateOrder"
  const router = createBrowserRouter([
 
    {
@@ -18,7 +19,11 @@ import Order from "./features/order/Order"
           element : <Cart/>
         },
         {
-          path: "/order",
+          path: "/order/new",
+          element : <CreateOrder/>
+        },
+        {
+          path : "/order/:orderId",
           element : <Order/>
         }
   ]
