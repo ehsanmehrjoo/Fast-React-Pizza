@@ -1,11 +1,6 @@
-import { useState } from "react";
+
 
 // https://uibakery.io/regex-library/phone-number
-const isValidPhone = (str) =>
-  /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/.test(
-    str
-  );
-
 const fakeCart = [
   {
     pizzaId: 12,
@@ -30,15 +25,32 @@ const fakeCart = [
   },
 ];
 
+const isValidPhone = (str) =>
+  /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/.test(
+    str
+  );
+
 function CreateOrder() {
   // const [withPriority, setWithPriority] = useState(false);
   const cart = fakeCart;
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const phoneInput = e.target.phone.value;
+
+    if (!isValidPhone(phoneInput)) {
+      alert('Please enter a valid phone number');
+      return;
+    }
+
+    console.log("Order submitted!", cart);
+  };
+
   return (
     <div>
-      <h2>Ready to order? Let's go!</h2>
+      <h2>Ready to order? Let&apos;s go!</h2>
 
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           <label>First Name</label>
           <input type="text" name="customer" required />
@@ -66,11 +78,11 @@ function CreateOrder() {
             // value={withPriority}
             // onChange={(e) => setWithPriority(e.target.checked)}
           />
-          <label htmlFor="priority">Want to yo give your order priority?</label>
+          <label htmlFor="priority">Want to give your order priority?</label>
         </div>
 
         <div>
-          <button>Order now</button>
+          <button type="submit">Order now</button>
         </div>
       </form>
     </div>
