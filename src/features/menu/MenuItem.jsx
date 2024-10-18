@@ -1,5 +1,10 @@
+import PropTypes from "prop-types";
+import { formatCurrency } from "../../utilities/helpers";
+
 function MenuItem({ pizza }) {
-  const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
+  const { 
+    // id,
+     name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
 
   return (
     <li>
@@ -15,4 +20,15 @@ function MenuItem({ pizza }) {
   );
 }
 
+// Define prop-types for the pizza object
+MenuItem.propTypes = {
+  pizza: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    unitPrice: PropTypes.number.isRequired,
+    ingredients: PropTypes.arrayOf(PropTypes.string).isRequired,
+    soldOut: PropTypes.bool,
+    imageUrl: PropTypes.string.isRequired,
+  }).isRequired,
+};
 export default MenuItem;

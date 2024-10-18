@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Home from './Ui/Home'
- import Menu , {loader} from './features/menu/Menu'
+ import Menu , {loader as menuLoader} from './features/menu/Menu'
 import Cart from "./features/cart/Cart"
 import Order from "./features/order/Order"
 import CreateOrder from "./features/order/CreateOrder"
@@ -15,7 +15,8 @@ import AppLayout from "./Ui/AppLayout"
        },
        {
          path : "/menu",
-         element : <Menu />
+         element : <Menu />,
+         loader : menuLoader
            },
            {
              path: "/cart",
