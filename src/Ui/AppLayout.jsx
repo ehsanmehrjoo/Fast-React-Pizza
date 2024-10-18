@@ -1,7 +1,16 @@
+import CartOverview from "../features/cart/CartOverview"
+import Header from "./Header"
+
  
 function AppLayout() {
   return (
-    <div>AppLayout</div>
+    <div>
+      <Header />
+      <main>
+      <h1>Content</h1>
+    </main>
+    <CartOverview />
+    </div>
   )
 }
 
