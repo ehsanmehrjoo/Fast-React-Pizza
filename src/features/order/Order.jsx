@@ -1,5 +1,7 @@
 // Test ID: IIDSAT
 
+import { useLoaderData } from "react-router-dom";
+import { getOrder } from "../../services/apiRestaurant.js";
 import {
   calcMinutesLeft,
   formatCurrency,
@@ -42,6 +44,8 @@ const order = {
 };
 
 function Order() {
+  const orderr = useLoaderData();
+  console.log(orderr);
   // Everyone can search for all orders, so for privacy reasons we're gonna exclude names or addresses.
   const {
     // id,
@@ -83,4 +87,8 @@ function Order() {
   );
 }
 
+export async function loader({params}){
+  const order = await getOrder(params.orderId);
+  return order
+}
 export default Order;
