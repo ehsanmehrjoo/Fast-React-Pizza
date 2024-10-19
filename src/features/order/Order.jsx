@@ -48,7 +48,7 @@ function Order() {
   console.log(order);
   // Everyone can search for all orders, so for privacy reasons we're gonna exclude names or addresses.
   const {
-    // id,
+    id,
     priority,
     priorityPrice,
     orderPrice,
@@ -61,7 +61,7 @@ function Order() {
   return (
     <div>
       <div>
-        <h2>Status</h2>
+        <h2>Order  #{id}  Status</h2>
 
         <div>
           {priority && <span>Priority</span>}
