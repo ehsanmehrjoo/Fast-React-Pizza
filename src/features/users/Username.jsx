@@ -2,7 +2,7 @@
 
 function Username() {
   return (
-    <div>Ehsan</div>
+    <div className="text-sm font-semibold">Ehsan</div>
   )
 }
 
