@@ -2,7 +2,7 @@
 
 function Username() {
   return (
-    <div className="text-sm font-semibold hidden">Ehsan</div>
+    <div className="text-sm font-semibold hidden md:block">Ehsan</div>
   )
 }
 
