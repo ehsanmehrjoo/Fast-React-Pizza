@@ -39,7 +39,7 @@ function Header() {
               ✕
             </button>
             <nav className="flex flex-col space-y-4">
-              <Link to="/" className="text-lg font-semibold hover:text-gray-300 text-gray-700" >
+              <Link to="/" className="text-lg font-semibold text-gray-700" >
                 Fast React Pizza Co.
               </Link>
               <SearchOrder isOpen={isOpen} setIsOpen={setIsOpen}/>
