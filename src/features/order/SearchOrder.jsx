@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
  
 
-function SearchOrder() {
+function SearchOrder({ setIsOpen}) {
     const [query, setQuery] = useState('');
     const navigate = useNavigate()
  
@@ -12,6 +12,7 @@ function SearchOrder() {
         if(!query) return
         navigate(`/order/${query}`)
         setQuery('')
+        setIsOpen(false)
     }
   return (
     <form onSubmit={handelSubmit}>
