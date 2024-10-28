@@ -76,7 +76,7 @@ function CreateOrder() {
           <label htmlFor="priority">Want to give your order priority?</label>
         </div>
 
-        <div>
+        <div className="mt-5">
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
           <ButtonCreateOrder>
           {isSubmitting ? "Placing order..." : "Order now"}
