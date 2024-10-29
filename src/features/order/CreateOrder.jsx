@@ -61,8 +61,7 @@ function CreateOrder() {
         <div>
           <label>Address</label>
           <div>
-            <input className="rounded-full px-4 py-2 border border-stone-200 text-sm transition-all duration-300  
-            focus:outline-none focus:ring focus:ring-yellow-400 w-full md:px-6 md:py-3" type="text" name="address" required />
+            <input className="input" type="text" name="address" required />
           </div>
         </div>
 
