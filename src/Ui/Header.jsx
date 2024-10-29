@@ -33,7 +33,7 @@ function Header() {
             onClick={(e) => e.stopPropagation()}
           >
             <button
-              className="text-gray-400 focus:outline-none mb-6"
+              className="text-gray-400 focus:outline-none mb-6 top-0"
               onClick={() => setIsOpen(false)}
             >
               ✕
