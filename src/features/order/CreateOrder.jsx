@@ -41,10 +41,10 @@ function CreateOrder() {
   const cart = fakeCart;
 
   return (
-    <div>
-      <h2>Ready to order? Let's go!</h2>
+    <div  >
+      <h2 className="mb-4 text-3xl	text-center">Ready to order? Let's go!</h2>
 
-      <Form method="POST">
+      <Form method="POST" className="m-6">
         <div>
           <label>First Name</label>
           <input className="input" type="text" name="customer" required />
@@ -74,7 +74,7 @@ function CreateOrder() {
             // value={withPriority}
             // onChange={(e) => setWithPriority(e.target.checked)}
           />
-          <label htmlFor="priority">Want to give your order priority?</label>
+          <label className="px-3 mt-4" htmlFor="priority">Want to give your order priority?</label>
         </div>
 
         <div className="mt-5">
