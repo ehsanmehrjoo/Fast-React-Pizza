@@ -19,7 +19,7 @@ function SearchOrder({ setIsOpen}) {
         
      <input type="text" name="order" value={query} placeholder="Search order #"
       onChange={(e) => setQuery(e.target.value)} 
-        className="px-4 py-2 text-sm  transition-all duration-300 text-stone-400 bg-yellow-100 rounded-full placeholder:text-stone-400 w-28 sm:w-[288px] sm:focus:w-72 focus:outline-none focus:ring focus:ring-yellow-500 focus:ring-opacity-50"
+        className="px-4 py-2 text-sm  transition-all duration-300 text-stone-400 bg-yellow-100 rounded-full placeholder:text-base placeholder:text-stone-400 w-28 sm:w-[288px] sm:focus:w-72 focus:outline-none focus:ring focus:ring-yellow-500 focus:ring-opacity-50"
       />
     </form>
   )
