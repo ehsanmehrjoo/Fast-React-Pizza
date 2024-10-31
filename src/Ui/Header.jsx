@@ -7,7 +7,7 @@ function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="flex items-center justify-between uppercase bg-yellow-400 text-gray-700 px-4 py-3 border-b border-stone-500 sm:px-6 relative">
+    <header className="flex items-center justify-between uppercase bg-yellow-400 text-gray-700 px-4 py-3 border-b border-stone-500 sm:px-6 relative font-pizza">
       <button
         className="lg:hidden p-2 text-gray-700 focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}

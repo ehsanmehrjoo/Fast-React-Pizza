@@ -7,7 +7,7 @@ export default {
   ],
   theme: {
     fontFamily:{
-      pizza : 'Roboto Mono, monospace',
+      sans : 'Roboto Mono, monospace',
     },
     extend: {},
   },
