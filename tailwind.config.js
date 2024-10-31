@@ -6,6 +6,9 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily:{
+      pizza : 'Roboto Mono, monospace',
+    },
     extend: {},
   },
   plugins: [],
