@@ -33,12 +33,12 @@ function Cart() {
     <div>
       <LinkButton  to="/menu" className='text-sm text-blue-500 hover:text-blue-600 hover:underline'>&larr; Back to menu</LinkButton>
 
-      <h2>Your cart, %NAME%</h2>
+      <h2 className='font-medium text-base'>Your cart, %NAME%</h2>
 
       <div>
-      <Button to="/order/new">Order pizzas</Button>
+      <Button to="/order/new" type='primary'>Order pizzas</Button>
    
-        <button>Clear cart</button>
+        <Button type='primaryClear'>Clear cart</Button>
       </div>
     </div>
   );
