@@ -42,7 +42,7 @@ function CreateOrder() {
 
   return (
     <div  >
-      <h2 className="mb-4 text-3xl	text-center">Ready to order? Let's go!</h2>
+      <h2 className="mb-4 ml-6 font-semibold text-xl	sm:text-2xl">Ready to order? Let's go!</h2>
 
       <Form method="POST" className="m-6">
         <div>
