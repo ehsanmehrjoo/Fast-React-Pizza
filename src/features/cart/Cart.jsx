@@ -33,7 +33,7 @@ function Cart() {
     <div className='py-3 px-4'>
       <LinkButton  to="/menu" className='text-sm text-blue-500 hover:text-blue-600 hover:underline'>&larr; Back to menu</LinkButton>
 
-      <h2 className='font-medium text-base mt-7'>Your cart, %NAME%</h2>
+      <h2 className='font-semibold text-xl mt-7 mb-5'>Your cart, %NAME%</h2>
 
       <div>
       <Button to="/order/new" type='primary'>Order pizzas</Button>
