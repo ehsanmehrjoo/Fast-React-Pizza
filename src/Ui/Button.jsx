@@ -9,7 +9,7 @@ function Button({disabled , children , to , type}) {
        const styles = {
  
         primary : base + '   py-3 px-4 sm:px-6 sm:py-4',
-primaryClear:   ' ml-2.5 bg-stone-100 rounded-full border-2 border-stone-300 text-stone-400 py-3 px-4 sm:px-6 sm:py-4',
+        primaryClear:   ' ml-2.5 bg-stone-100   hover:bg-stone-300 hover:text-stone-600  duration-500 transition-colors font-medium rounded-full border-2 border-stone-300 text-stone-400 py-3 px-4 sm:px-6 sm:py-4',
 
         small : base + '  py-2 px-4 sm:px-5 sm:py-2.5 text-xs '
 
