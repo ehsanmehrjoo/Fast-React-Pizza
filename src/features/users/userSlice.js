@@ -1,31 +1,8 @@
-import { createSlice } from "@reduxjs/toolkit"
-import store from '../../store';
-/*
-function getPosition() {
-  return new Promise(function (resolve, reject) {
-    navigator.geolocation.getCurrentPosition(resolve, reject);
-  });
-}
+import { createSlice } from "@reduxjs/toolkit";
 
-async function fetchAddress() {
-  // 1) We get the user's geolocation position
-  const positionObj = await getPosition();
-  const position = {
-    latitude: positionObj.coords.latitude,
-    longitude: positionObj.coords.longitude,
-  };
-
-  // 2) Then we use a reverse geocoding API to get a description of the user's address, so we can display it the order form, so that the user can correct it if wrong
-  const addressObj = await getAddrese(position);
-  const address = `${addressObj?.locality}, ${addressObj?.city} ${addressObj?.postcode}, ${addressObj?.countryName}`;
-
-  // 3) Then we return an object with the data that we are interested in
-  return { position, address };
-}
-*/
 const initialState = {
-  username : "",
-}
+  username: "",
+};
 
 const userSlice = createSlice({
   name: 'user',
@@ -35,10 +12,7 @@ const userSlice = createSlice({
       state.username = action.payload.username;
     },
   },
-})
-
+});
 
 export const { updateName } = userSlice.actions;
 export default userSlice.reducer;
-
-// console.log(store.getState());
