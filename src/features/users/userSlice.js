@@ -1,4 +1,4 @@
-const { createSlice } = require("@reduxjs/toolkit")
+import { createSlice } from "@reduxjs/toolkit"
 
 /*
 function getPosition() {
@@ -24,7 +24,7 @@ async function fetchAddress() {
 }
 */
 const initialState = {
-  username : "",
+  username : "ehsannnn",
 }
 
 const userSlice = createSlice({
