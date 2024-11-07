@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Button from '../../Ui/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateName } from './userSlice';
@@ -10,10 +10,10 @@ function CreateUser() {
   const navigate = useNavigate();
   const userName = useSelector(state => state.user.username);
 
-  useEffect(() => {
-    // وقتی صفحه لود می‌شود، مقدار username از Redux یا localStorage بارگذاری می‌شود
-    if (userName) setUsername(userName);
-  }, [userName]);
+  // useEffect(() => {
+  //   // وقتی صفحه لود می‌شود، مقدار username از Redux یا localStorage بارگذاری می‌شود
+  //   if (userName) setUsername(userName);
+  // }, [userName]);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -23,14 +23,7 @@ function CreateUser() {
 
   return (
     <form onSubmit={handleSubmit}>
-      {userName ? (
-        <div>
-          <Button type="primary" onClick={() => navigate('/menu')}>
-            Continue ordering, {userName}
-          </Button>
-        </div>
-      ) : (
-        <>
+    
           <p className='mb-5 text-sm text-stone-600 md:text-base'>
             👋 Welcome! Please start by telling us your name:
           </p>
@@ -46,8 +39,7 @@ function CreateUser() {
               <Button type="primary">Start ordering</Button>
             </div>
           )}
-        </>
-      )}
+        
     </form>
   );
 }
