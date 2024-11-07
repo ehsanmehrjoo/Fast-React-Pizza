@@ -29,10 +29,17 @@ const cartSlice = createSlice({
       },
       increasCartQuantity(state, action) {
         // Add logic for updating the cart
-        // const item
+        // payload = pizzaId
+        const item = state.cart.find(item => item.pizzaId === action.payload)
+        item.quantity++;
+        item.totalPrice = item.quantity * item.unitPrice
       },
       decreaseCartQuantity(state, action) {
         // Add logic for updating the cart
+         // payload = pizzaId
+         const item = state.cart.find(item => item.pizzaId === action.payload)
+         item.quantity--;
+         item.totalPrice = item.quantity * item.unitPrice
       },
       clearCart(state) {
         // Add logic for clearing the cart
