@@ -7,7 +7,7 @@ function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="flex items-center justify-between uppercase bg-yellow-400 text-gray-700 px-4 py-3 border-b border-stone-500 sm:px-6 relative ">
+    <header className="flex items-center justify-between uppercase bg-yellow-400 text-gray-700 px-4 py-3 border-b border-stone-500 sm:px-6 relative">
       <button
         className="lg:hidden p-2 text-gray-700 focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}
@@ -18,8 +18,10 @@ function Header() {
         <div className="w-6 h-0.5 bg-gray-700 my-1"></div>
       </button>
 
-      <Link className="tracking-widest" to="/">Fast React Pizza Co.</Link>
-      
+      <Link className="tracking-widest" to="/">
+        Fast React Pizza Co.
+      </Link>
+
       <div className="hidden lg:flex items-center space-x-4">
         <SearchOrder />
         <Username />
@@ -39,7 +41,11 @@ function Header() {
               ✕
             </button>
             <nav className="flex flex-col space-y-4">
-              <Link to="/" className="text-lg font-semibold text-gray-700" >
+              <Link
+                to="/"
+                className="text-lg font-semibold text-gray-700"
+                onClick={() => setIsOpen(false)} // Close the sidebar when clicking the link
+              >
                 Fast React Pizza Co.
               </Link>
               <SearchOrder isOpen={isOpen} setIsOpen={setIsOpen}/>
@@ -53,3 +59,4 @@ function Header() {
 }
 
 export default Header;
+
