@@ -16,7 +16,7 @@ function MenuItem({ pizza }) {
         <div className="mt-auto flex items-center justify-between">
           {!soldOut ? <p className="text-sm">{formatCurrency(unitPrice)}</p> : 
           <p  className="text-sm opacity uppercase font-medium text-stone-500">Sold out</p>}
-          <Button type="small">Add to Cart</Button>
+          {!soldOut && <Button type="small">Add to Cart</Button>}
         </div>
       </div>
     </li>
