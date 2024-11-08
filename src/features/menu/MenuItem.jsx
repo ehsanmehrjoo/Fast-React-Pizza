@@ -10,16 +10,17 @@ function MenuItem({ pizza }) {
      name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
      const dispatch = useDispatch();
 
-     function handleAddToCart(){
-       const newItem =   {
-        pizzaId : id,
-        name,
+    function handleAddToCart(){
+      const newItem =  {
+        pizzaId :id,
+        name ,
         quantity: 1,
-        unitPrice,
-        totalPrice: unitPrice * 1 ,
+        unitPrice ,
+        totalPrice: unitPrice * 1,
     }
-    dispatch(addCart(newItem));
-     }
+    dispatch(addCart(newItem))
+    
+    }
   return (
     <li className="flex  gap-4 py-2">
       <img src={imageUrl} alt={name} className={`h-24 ${soldOut ? 'opacity-70 grayscale ' : ''} `} />

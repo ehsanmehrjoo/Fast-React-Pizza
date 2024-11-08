@@ -6,7 +6,7 @@ const initialState = {
         {
             pizzaId : 12,
             name: "Mediterranean",
-            quantity: 2,
+            quantity:    2,
             unitPrice: 16,
             totalPrice: 32,
         }
@@ -21,7 +21,10 @@ const cartSlice = createSlice({
         // Add logic for adding to the cart
         // payload = new Cart
         state.cart.push(action.payload);
+        
+
       },
+
       removeCart(state, action) {
         // Add logic for removing from the cart
         // payload = pizzaId
@@ -51,3 +54,6 @@ const cartSlice = createSlice({
 
   export const {addCart , removeCart, increasCartQuantity , decreaseCartQuantity ,clearCart} = cartSlice.actions;
 export default cartSlice.reducer
+
+export const getTotalCartQuantity = (state) => state.cart.cart.reduce((sum, cur) => sum + cur.quantity, 0)
+export const getTotalCartPrice = (state) => state.cart.cart.reduce((sum, cur) => sum + cur.totalPrice, 0)
