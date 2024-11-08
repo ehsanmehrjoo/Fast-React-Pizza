@@ -2,15 +2,23 @@ import PropTypes from "prop-types";
 import { formatCurrency } from "../../utilities/helpers";
 import Button from "../../Ui/Button";
 import { useDispatch } from "react-redux";
+import { addCart } from "../cart/cartSlice";
 
 function MenuItem({ pizza }) {
   const { 
-    // id,
+    id,
      name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
      const dispatch = useDispatch();
 
      function handleAddToCart(){
-      dispatch()
+       const newItem =   {
+        pizzaId : id,
+        name,
+        quantity: 1,
+        unitPrice,
+        totalPrice: unitPrice * 1 ,
+    }
+    dispatch(addCart(newItem));
      }
   return (
     <li className="flex  gap-4 py-2">
