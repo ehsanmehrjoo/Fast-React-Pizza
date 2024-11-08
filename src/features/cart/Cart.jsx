@@ -2,39 +2,45 @@ import { Link } from 'react-router-dom';
 import LinkButton from '../../Ui/LinkButton';
 import Button from '../../Ui/Button';
 import CartItem from './CartItem';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import EmptyCart from './EmptyCart';
+import { clearCart } from './cartSlice';
 
-const fakeCart = [
-  {
-    pizzaId: 12,
-    name: 'Mediterranean',
-    quantity: 2,
-    unitPrice: 16,
-    totalPrice: 32,
-  },
-  {
-    pizzaId: 6,
-    name: 'Vegetale',
-    quantity: 1,
-    unitPrice: 13,
-    totalPrice: 13,
-  },
-  {
-    pizzaId: 11,
-    name: 'Spinach and Mushroom',
-    quantity: 1,
-    unitPrice: 15,
-    totalPrice: 15,
-  },
-];
+// const fakeCart = [
+//   {
+//     pizzaId: 12,
+//     name: 'Mediterranean',
+//     quantity: 2,
+//     unitPrice: 16,
+//     totalPrice: 32,
+//   },
+//   {
+//     pizzaId: 6,
+//     name: 'Vegetale',
+//     quantity: 1,
+//     unitPrice: 13,
+//     totalPrice: 13,
+//   },
+//   {
+//     pizzaId: 11,
+//     name: 'Spinach and Mushroom',
+//     quantity: 1,
+//     unitPrice: 15,
+//     totalPrice: 15,
+//   },
+// ];
 
 function Cart() {
   // const cart = fakeCart;
   const cart = useSelector(state => state.cart.cart)
   console.log(cart);
  
- 
 const username = useSelector(state => state.user.username)
+const dispatch = useDispatch()
+function handleClearCart(){
+  dispatch(clearCart(cart))
+}
+if(cart.length === 0) return <EmptyCart />;
   return (
     <div className='py-3 px-4'>
       <LinkButton  to="/menu" className='text-sm text-blue-500 hover:text-blue-600 hover:underline'>&larr; Back to menu</LinkButton>
@@ -46,7 +52,7 @@ const username = useSelector(state => state.user.username)
       <div className='mt-6 space-x-2'>
       <Button to="/order/new" type='primary'>Order pizzas</Button>
    
-        <Button type='secondary'  >Clear cart</Button>
+        <Button type='secondary'  onClick={handleClearCart}>Clear cart</Button>
       </div>
     </div>
   );
