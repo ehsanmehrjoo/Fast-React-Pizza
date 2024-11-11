@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addCart, getCurrentQuantityById } from "../cart/cartSlice";
 import DeleteItem from "../cart/deleteItem";
  
+ 
 
 function MenuItem({ pizza }) {
   const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
