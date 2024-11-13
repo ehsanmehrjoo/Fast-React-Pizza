@@ -3,6 +3,8 @@ import { createOrder } from "../../services/apiRestaurant";
 import Button from "../../Ui/Button";
 import { useSelector } from "react-redux";
 import { useState } from "react";
+import { getCart } from "../cart/cartSlice";
+import EmptyCart from "../cart/EmptyCart";
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
@@ -10,29 +12,7 @@ const isValidPhone = (str) =>
     str
   );
 
-const fakeCart = [
-  {
-    pizzaId: 12,
-    name: "Mediterranean",
-    quantity: 2,
-    unitPrice: 16,
-    totalPrice: 32,
-  },
-  {
-    pizzaId: 6,
-    name: "Vegetale",
-    quantity: 1,
-    unitPrice: 13,
-    totalPrice: 13,
-  },
-  {
-    pizzaId: 11,
-    name: "Spinach and Mushroom",
-    quantity: 1,
-    unitPrice: 15,
-    totalPrice: 15,
-  },
-];
+ 
 
 function CreateOrder() {
   const navigation = useNavigation();
@@ -41,8 +21,9 @@ function CreateOrder() {
   const userName = useSelector(state => state.user.username)
 
   // const [withPriority, setWithPriority] = useState(false);
-  const cart = fakeCart;
-
+  const cart = useSelector(getCart);
+  console.log(cart);
+if(!cart.length) return <EmptyCart />
   return (
     <div  >
       <h2 className="mb-4 ml-6 font-semibold text-xl	sm:text-2xl">Ready to order? Let's go!</h2>
