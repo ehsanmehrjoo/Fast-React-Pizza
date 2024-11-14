@@ -22,12 +22,16 @@ export const fetchAddress = createAsyncThunk ('user/fetchAddress', async functio
     const address = `${addressObj?.locality}, ${addressObj?.city} ${addressObj?.postcode}, ${addressObj?.countryName}`;
   
     // 3) Then we return an object with the data that we are interested in
+    // payload of the fulfilled state
     return { position, address };
 })
 
 const initialState = {
   username:  localStorage.getItem('username')  ||"",
   status : 'idle',
+  position : {},
+  Address : '',
+  error : ''
 };
 
 const userSlice = createSlice({
@@ -39,7 +43,17 @@ const userSlice = createSlice({
       localStorage.setItem('username', action.payload.username);
     },
   },
-  extraReducers: (builder) => builder.addCase(fetchAddress.pending , (state, action) => (state.status = 'loading')) 
+  extraReducers: (builder) => builder.addCase(fetchAddress.pending , (state, action) => {state.status = 'loading'}).
+   addCase(fetchAddress.fulfilled , (state ,action ) => 
+    {
+      state.position = action.payload.position;
+      state.Address = action.payload.address;
+      state.status = 'idle'
+
+    }).addCase(fetchAddress.rejected, (state , action ) => {
+      state.error = action.error.message;
+      state.status = 'error'
+    })
 });
 export const { updateName } = userSlice.actions;
 export default userSlice.reducer;
