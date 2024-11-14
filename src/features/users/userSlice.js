@@ -27,6 +27,7 @@ export const fetchAddress = createAsyncThunk ('user/fetchAddress', async functio
 
 const initialState = {
   username:  localStorage.getItem('username')  ||"",
+  status : 'idle',
 };
 
 const userSlice = createSlice({
@@ -38,8 +39,8 @@ const userSlice = createSlice({
       localStorage.setItem('username', action.payload.username);
     },
   },
+  extraReducers: (builder) => builder.addCase(fetchAddress.pending , (state, action) => (state.status = 'loading')) 
 });
-
 export const { updateName } = userSlice.actions;
 export default userSlice.reducer;
 console.log(userSlice);
