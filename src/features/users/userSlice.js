@@ -43,8 +43,9 @@ const userSlice = createSlice({
       localStorage.setItem('username', action.payload.username);
     },
   },
-  extraReducers: (builder) => builder.addCase(fetchAddress.pending , (state, action) => {state.status = 'loading'}).
-   addCase(fetchAddress.fulfilled , (state ,action ) => 
+  extraReducers: 
+  (builder) => builder.addCase(fetchAddress.pending , (state, action) =>
+     {state.status = 'loading'}).addCase(fetchAddress.fulfilled , (state ,action ) => 
     {
       state.position = action.payload.position;
       state.Address = action.payload.address;
