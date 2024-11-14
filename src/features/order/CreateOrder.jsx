@@ -7,7 +7,8 @@ import EmptyCart from "../cart/EmptyCart";
 import store from "../../store"
 import { formatCurrency } from "../../utilities/helpers";
 import { useState } from "react";
-import CartOverview from "../cart/CartOverview";
+// import CartOverview from "../cart/CartOverview";
+// import { useOrder } from "./OrderContext";
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
@@ -23,13 +24,15 @@ function CreateOrder() {
   const formErrors = useActionData();
   const userName = useSelector(state => state.user.username);
 
-  const [withPriority, setWithPriority] = useState(false);
+ 
 
   const cart = useSelector(getCart);
-  const totalCartPrice = useSelector(getTotalCartPrice)
-  const priorityPrice = withPriority ? totalCartPrice * 0.2 : 0 ;
-  const totalPrice = totalCartPrice + priorityPrice;
+//  const { withPriority , setWithPriority , totalPrice} = useOrder()
  
+ const [withPriority, setWithPriority] = useState(false);
+     const totalCartPrice = useSelector(getTotalCartPrice)
+     const priorityPrice = withPriority ? totalCartPrice * 0.2 : 0;
+         const totalPrice = totalCartPrice + priorityPrice;
 if(!cart.length) return <EmptyCart />
   return (
     <div >
