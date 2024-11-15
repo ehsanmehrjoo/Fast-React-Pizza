@@ -8,41 +8,9 @@ import {
   formatDate,
 } from "../../utilities/helpers.js";
 import OrderItem from "./OrderItem.jsx";
+import { useSelector } from "react-redux";
 
-// const order = {
-//   id: "ABCDEF",
-//   customer: "Jonas",
-//   phone: "123456789",
-//   address: "Arroios, Lisbon , Portugal",
-//   priority: true,
-//   estimatedDelivery: "2027-04-25T10:00:00",
-//   cart: [
-//     {
-//       pizzaId: 7,
-//       name: "Napoli",
-//       quantity: 3,
-//       unitPrice: 16,
-//       totalPrice: 48,
-//     },
-//     {
-//       pizzaId: 5,
-//       name: "Diavola",
-//       quantity: 2,
-//       unitPrice: 16,
-//       totalPrice: 32,
-//     },
-//     {
-//       pizzaId: 3,
-//       name: "Romana",
-//       quantity: 1,
-//       unitPrice: 15,
-//       totalPrice: 15,
-//     },
-//   ],
-//   position: "-9.000,38.000",
-//   orderPrice: 95,
-//   priorityPrice: 19,
-// };
+ 
 
 function Order() {
   const order = useLoaderData();
@@ -58,7 +26,9 @@ function Order() {
   } = order;
 
   const deliveryIn = calcMinutesLeft(estimatedDelivery);
-
+  const {  Address  } = useSelector(state => state.user);
+  
+console.log(Address);
   return (
     <div className="space-y-8 px-4 py-6">
     <div className="flex flex-wrap items-center justify-between gap-2">
@@ -76,6 +46,7 @@ function Order() {
           ? `Only ${deliveryIn} minutes left 😃`
           : "Order should have arrived"}
       </p>
+      <p className="text-sm text-stone-500">It will be sent to this address : {Address}</p>
       <p className="text-xs text-stone-500">(Estimated delivery: {formatDate(estimatedDelivery)})</p>
     </div>
     
