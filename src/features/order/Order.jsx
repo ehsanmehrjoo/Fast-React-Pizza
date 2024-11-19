@@ -8,9 +8,11 @@ import {
 import OrderItem from "./OrderItem.jsx";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
+import UpdateOrder from "./UpdateOrder.jsx";
 
 function Order() {
   const order = useLoaderData();
+  console.log(order);
   const fetcher = useFetcher();
  // Everyone can search for all orders, so for privacy reasons we're gonna exclude names or addresses.
   const {
@@ -91,6 +93,7 @@ function Order() {
           To pay on delivery: {formatCurrency(orderPrice + (priorityPrice || 0))}
         </p>
       </div>
+      {!priority && <UpdateOrder order={order}/>}
     </div>
   );
 }
