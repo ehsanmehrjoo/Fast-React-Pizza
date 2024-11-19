@@ -9,6 +9,7 @@ import OrderItem from "./OrderItem.jsx";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import UpdateOrder from "./UpdateOrder.jsx";
+import CancelOrder from "./CancelOrder.jsx";
 
 function Order() {
   const order = useLoaderData();
@@ -93,7 +94,11 @@ function Order() {
           To pay on delivery: {formatCurrency(orderPrice + (priorityPrice || 0))}
         </p>
       </div>
-      {!priority && <UpdateOrder order={order}/>}
+      <div className="flex items-end justify-end gap-3">
+
+      {/* {!priority && <UpdateOrder order={order}/>} */}
+      <CancelOrder />
+      </div>
     </div>
   );
 }
