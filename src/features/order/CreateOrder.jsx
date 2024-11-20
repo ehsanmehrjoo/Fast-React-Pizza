@@ -61,7 +61,7 @@ if(!cart.length) return <EmptyCart />
           <div>
             <input className="input md:rounded-2xl" type="text" name="address" defaultValue={Address} disabled={isLoadingAddress} required />
             {addressStatus === "error" && <p className="mt-2 rounded-md bg-red-100 p-2 text-xs text-red-700">{errorAddress}</p>}
-            {!position.latitude && !position.longitude && <span className="absolute text-sm py-1 px-4 right-[1rem] md:right-[25.9rem] md:bottom-[18.9rem] z-50">
+            {!position.latitude && !position.longitude && <span className="absolute text-sm  right-[1rem] md:right-[25.9rem] md:bottom-[18.9rem] z-50">
           <Button type="small"  disabled={isLoadingAddress} onClick={(e) => {
             e.preventDefault();
             dispatch(fetchAddress())
