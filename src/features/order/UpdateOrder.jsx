@@ -8,9 +8,10 @@ function UpdateOrder({ order}) {
     console.log(fetcher);
    
   return (
-    <fetcher.Form method='PATCH' className='text-right'>
-    <Button type='primary' >Make Priority</Button>
-    </fetcher.Form>
+    <fetcher.Form method="PATCH" action={`/order/${order.id}/update`} className="text-right">
+  <Button type="primary">Make Priority</Button>
+</fetcher.Form>
+
   )
 }
 

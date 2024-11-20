@@ -51,15 +51,18 @@ export async function updateOrder(id, updateObj) {
   } catch (err) {
     throw Error('Failed updating your order');
   }
-}
-export async function cancelOrder(id) {
+}export async function removeOrder(id) {
   try {
     const res = await fetch(`${API_URL}/order/${id}`, {
       method: 'DELETE',
     });
 
-    if (!res.ok) throw new Error('Failed to cancel the order');
+    if (!res.ok) {
+      const errorData = await res.json(); // دریافت پیام خطا
+      throw new Error(errorData.message || 'Failed to cancel the order');
+    }
   } catch (err) {
-    throw new Error('Could not cancel the order');
+    console.error('Error:', err.message); // چاپ خطا برای دیباگ
+    throw new Error(err.message || 'Could not cancel the order');
   }
 }

@@ -96,8 +96,8 @@ function Order() {
       </div>
       <div className="flex items-end justify-end gap-3">
 
-      {/* {!priority && <UpdateOrder order={order}/>} */}
-      <CancelOrder />
+      {!priority && <UpdateOrder order={order}/>}
+      <CancelOrder order={order} />
       </div>
     </div>
   );

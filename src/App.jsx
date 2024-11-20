@@ -37,8 +37,17 @@ import AppLayout   from "./Ui/AppLayout"
              element : <Order/>,
              loader : orderLoader,
              errorElement : <Error />,
-             action : UpdateOrderAction , CancelOrderAction
+              
            }
+           ,
+      {
+        path: "/order/:orderId/update",
+        action: UpdateOrderAction,
+      },
+      {
+        path: "/order/:orderId/cancel",
+        action: CancelOrderAction,
+      },
     ]
   },
 
