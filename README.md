@@ -1,5 +1,8 @@
 # Fast-React-Pizza-CO.
 
+![Fast-React-Pizza](public/Screenshot%20(437).png)
+![Fast-React-Pizza](public/Screenshot%20(438).png)
+![Fast-React-Pizza](public/Screenshot%20(439).png)
 ![Fast-React-Pizza](public/Screenshot%20(436).png)
 
 Fast React Pizza Co. is a Redux project where people can order pizza without authentication.
